@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace",
+    "editor.rulers": [
+        100
+    ]
+}
