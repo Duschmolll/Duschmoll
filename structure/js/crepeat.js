@@ -129,37 +129,16 @@ galettes.set('La Raclette', new Array('raclette', 'patate', 'lardons', 'cremefra
 
 const galettesKey = [...galettes.keys()]
 
-double = { id: 'double', name: 'La Double', value: new Array(jambon.id, emmental.id) };
-complete = { id: 'complete', name: 'La Complète', value: new Array(oeuf.id, emmental.id, jambon.id) };
-fermiere = { id: 'fermiere', name: 'La Fermière', value: new Array(pouletfume.id, emmental.id, oeuf.id) };
-vegetarienne = { id: 'vegetarienne', name: 'La Végetarienne', value: new Array(chevre.id, salade.id, huiledolive.id, tomate.id) };
-troisfromage = { id: 'troisfromage', name: 'La Trois Fromages', value: new Array(brie.id, chevre.id, emmental.id) };
-popeye = { id: 'popeye', name: 'La Popeye', value: new Array(oeuf.id, epinard.id, chevre.id) };
-thonthon = { id: 'thonthon', name: 'La Thonthon', value: new Array(oeuf.id, thon.id, emmental.id, citron.id, tomate.id) };
-biquette = { id: 'biquette', name: 'La Biquette', value: new Array(chevre.id, salade.id, noix.id, miel.id) };
-nordique = { id: 'nordique', name: 'La Nordique', value: new Array(saumonfume.id, cremefraiche.id, aneth.id, citron.id) };
-burger = { id: 'burger', name: 'La Burger', value: new Array(viandehachee.id, emmental.id, tomate.id, sauceburger.id) };
-raclette = { id: 'raclette', name: 'La Raclette', value: new Array(raclette.id, patate.id, lardons.id, cremefraiche.id) };
-
-const galettesKey2 = { id: 'galettes', value: new Array(double, complete, fermiere, vegetarienne, troisfromage, popeye, thonthon, biquette, nordique, burger, raclette) }
-
 for (var k = 0; k < galettesKey.length; k++) { //Sort the aliments of all the galettes by alphabetical order.
     galettes.get(galettesKey[k]).sort();
-}
-
-for (var k = 0; k < galettesKey2.value.length; k++) {
-    galettesKey2.value[k].value.sort();
 }
 
 function shuffle(array) { //randomise the order of the galettes.
     array.sort(() => Math.random() - 0.5);
     console.log('Shuffle Done')
 }
-console.log(galettesKey2.value);
-shuffle(galettesKey);
 
-console.log(galettesKey2.value);
-shuffle(galettesKey2.value);
+shuffle(galettesKey);
 
 var galettesToFind = 0; //initiate the order of galette to find.
 var galettesFound = 0; //count the number of good answer.
