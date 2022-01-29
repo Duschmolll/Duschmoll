@@ -350,30 +350,15 @@ for (k = (galettesKey.value.length - 1); k >= 0; k--) {
 
 function moveAnswer(idAnswer) { //Function to move the galette found to the right.
 
-    var interval = null;
-    var elem = document.getElementById(idAnswer);
-    var x = elem.offsetLeft; //getting the x of the galette found.
-    var y = elem.offsetTop; //getting the y of the galette found.
+    var elem = $('#' + idAnswer + 'S').position();
+    var x = elem.left //getting the x of the galette found.
+    var y = elem.top; //getting the y of the galette found.
 
-    window.posLeft = document.getElementById(idAnswer + 'S').offsetLeft //Getting the x destination for the movement of the galettes founds.
-    window.posTop = document.getElementById(idAnswer + 'S').offsetTop //Getting the y destination for the movement of the galettes founds.
-
-    clearInterval(interval);
-    interval = setInterval(frame, 1); //setting the interval to move the galette.
-
-    function frame() {
-        if (x == window.posLeft && y == window.posTop) { //Stopping the interval when the galette is arrived at the destination.
-            clearInterval(interval);
-            window.posTop = window.posTop - 55 //Changing the distanation to the next one.
-        } else if (x < window.posLeft) { //moving to the right.
-            x++;
-            elem.style.left = x + 'px';
-
-        } else { //moving to the bottom.
-            y++;
-            elem.style.top = y + 'px';
-
-        }
-    }
+    $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
+    $('#' + idAnswer).animate({ top: y }, { duration: 2500 }); //Moving the answer to the position in a y axe.
 }
+
+
+
+
 
