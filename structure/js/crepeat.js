@@ -105,17 +105,17 @@ function startTheGame() { //Launch the first galettes to find.
         elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
     }
 
-
 }
 
 function galettesToFindSelector() { //Pass to the next galettes when the answer is found.
     galettesFound++
     resetButtons()
+    elem = document.getElementById("findLength")
     if (galettesFound < galettesKey.value.length) {
         galettesToFind++
-        document.getElementById("findLength").value = galettesKey.value[galettesToFind].value.length + ' ingredients' //Showing the number of ingredient needed.
+        elem.value = galettesKey.value[galettesToFind].value.length + ' ingredients' //Showing the number of ingredient needed.
     } else {
-        document.getElementById("findLength").value = 'Well Done' // Saying GJ when all the ingredient are found.
+        elem.value = 'Well Done' // Saying GJ when all the ingredient are found.
         document.getElementById("answer").value = "Restart" // Setting up the restart button at the end.
     }
 }
@@ -188,10 +188,13 @@ function answerclick(btn) { // Show the solution to the galette.
         btn.setAttribute("class", "foodTypeSelected"); //Showing the answer button as selected.
 
         for (k = 0; k < galettesKey.value[galettesToFind].value.length; k++) {
-            if (document.getElementById(galettesKey.value[galettesToFind].value[k]).className == 'foodTypeUnselected') {
-                document.getElementById(galettesKey.value[galettesToFind].value[k]).setAttribute("class", "foodTypeAnswer"); //Showing the ingredient button as hinted and unselected.
+
+            elem = document.getElementById(galettesKey.value[galettesToFind].value[k])
+
+            if (elem.className == 'foodTypeUnselected') {
+                elem.setAttribute("class", "foodTypeAnswer"); //Showing the ingredient button as hinted and unselected.
             } else {
-                document.getElementById(galettesKey.value[galettesToFind].value[k]).setAttribute("class", "foodTypeSelectedAnswer"); //Showing the ingredient button as hinted and selected.
+                elem.setAttribute("class", "foodTypeSelectedAnswer"); //Showing the ingredient button as hinted and selected.
             }
         }
         document.getElementById("answer").value = 'Hide Anwser' //Changing the value of the answer button.
@@ -200,14 +203,15 @@ function answerclick(btn) { // Show the solution to the galette.
 
     if (btn.class == "foodTypeSelected" && galettesFound < galettesKey.value.length) { //if the button is selected before he click.
         btn.setAttribute("class", "foodTypeUnselected"); //Showing the answer button as unselected.
+
         for (k = 0; k < galettesKey.value[galettesToFind].value.length; k++) {
 
-            element = document.getElementById(galettesKey.value[galettesToFind].value[k]);
+            elem = document.getElementById(galettesKey.value[galettesToFind].value[k]);
 
-            if (element.className == 'foodTypeSelectedAnswer') {
-                element.setAttribute("class", "foodTypeSelected"); //Showing the ingredient button as selected.
+            if (elem.className == 'foodTypeSelectedAnswer') {
+                elem.setAttribute("class", "foodTypeSelected"); //Showing the ingredient button as selected.
             } else {
-                element.setAttribute("class", "foodTypeUnselected"); //Showing the ingredient button as unselected.
+                elem.setAttribute("class", "foodTypeUnselected"); //Showing the ingredient button as unselected.
             }
         }
         document.getElementById("answer").value = "Show Answer" //Changing the value of the answer button.
@@ -246,12 +250,15 @@ function compareUserToGalettes() { //Compare the User Input with the Galettes to
         }
     }
     if (userAnswer.toString() == galettesKey.value[galettesToFind].value.toString()) {
+
+        elem = document.getElementById(galettesKey.value[galettesToFind].id)
+
         if (answerWasShowed == 1) {
-            document.getElementById(galettesKey.value[galettesToFind].id).setAttribute("class", "galettesAnswerShowed"); //Showing the galettes with the use of the answer.
+            elem.setAttribute("class", "galettesAnswerShowed"); //Showing the galettes with the use of the answer.
         } else if (ingredientMismatch == 1) {
-            document.getElementById(galettesKey.value[galettesToFind].id).setAttribute("class", "galettesMistake"); //Showing the galettes with a mistake.
+            elem.setAttribute("class", "galettesMistake"); //Showing the galettes with a mistake.
         } else {
-            document.getElementById(galettesKey.value[galettesToFind].id).setAttribute("class", "galettesFound"); //Showing the galettes as found.
+            elem.setAttribute("class", "galettesFound"); //Showing the galettes as found.
         }
         moveAnswer(galettesKey.value[galettesToFind].id)
         galettesToFindSelector();
