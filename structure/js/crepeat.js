@@ -1,80 +1,74 @@
 //Declaring the var for the inputIDs
-var inputID = new Array();
+let inputID = new Array();
 inputID.push("answer") //adding the button for the answers.
 
 //Setting up the object for the buttons.
 
 //Objets for each ingredient in the categories of Viandes.
-iJambon = { id: 'iJambon', name: 'Jambon', icon: 'https://img.icons8.com/color/48/000000/jamon.png' };
-iPouletFume = { id: 'iPouletFume', name: 'Poulet Fumé', icon: 'https://img.icons8.com/color/48/000000/thanksgiving.png' };
-iOeuf = { id: 'iOeuf', name: 'Oeuf', icon: 'https://img.icons8.com/color/48/000000/egg-carton.png' };
-iThon = { id: 'iThon', name: 'Thon', icon: 'https://img.icons8.com/external-icongeek26-flat-icongeek26/64/fa314a/external-salmon-alaska-icongeek26-flat-icongeek26.png' };
-iSaumonFume = { id: 'iSaumonFume', name: 'Saumon Fumé', icon: 'https://img.icons8.com/color/48/fa314a/sashimi.png' };
-iViandeHachee = { id: 'iViandeHachee', name: 'Viande hachée', icon: 'https://img.icons8.com/plasticine/100/000000/ground-beef.png' };
-iLardons = { id: 'iLardons', name: 'Lardons', icon: 'https://img.icons8.com/color/48/000000/bacon.png' };
+const iJambon = { id: 'iJambon', name: 'Jambon', icon: 'https://img.icons8.com/color/48/000000/jamon.png' };
+const iPouletFume = { id: 'iPouletFume', name: 'Poulet Fumé', icon: 'https://img.icons8.com/color/48/000000/thanksgiving.png' };
+const iOeuf = { id: 'iOeuf', name: 'Oeuf', icon: 'https://img.icons8.com/color/48/000000/egg-carton.png' };
+const iThon = { id: 'iThon', name: 'Thon', icon: 'https://img.icons8.com/external-icongeek26-flat-icongeek26/64/fa314a/external-salmon-alaska-icongeek26-flat-icongeek26.png' };
+const iSaumonFume = { id: 'iSaumonFume', name: 'Saumon Fumé', icon: 'https://img.icons8.com/color/48/fa314a/sashimi.png' };
+const iViandeHachee = { id: 'iViandeHachee', name: 'Viande hachée', icon: 'https://img.icons8.com/plasticine/100/000000/ground-beef.png' };
+const iLardons = { id: 'iLardons', name: 'Lardons', icon: 'https://img.icons8.com/color/48/000000/bacon.png' };
 
 //Objets for each ingredient in the categories of Fromages.
-iBrie = { id: 'iBrie', name: 'Brie', icon: 'https://img.icons8.com/officel/50/000000/mozzarella.png' };
-iEmmental = { id: 'iEmmental', name: 'Emmental', icon: 'https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/50/000000/external-cheese-diet-and-nutrition-icongeek26-linear-colour-icongeek26.png' };
-iChevre = { id: 'iChevre', name: 'Chèvre', icon: 'https://img.icons8.com/plasticine/50/000000/mozzarella.png' };
-iRaclette = { id: 'iRaclette', name: 'Raclette', icon: 'https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-cheese-oktoberfest-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png' };
+const iBrie = { id: 'iBrie', name: 'Brie', icon: 'https://img.icons8.com/officel/50/000000/mozzarella.png' };
+const iEmmental = { id: 'iEmmental', name: 'Emmental', icon: 'https://img.icons8.com/external-icongeek26-linear-colour-icongeek26/50/000000/external-cheese-diet-and-nutrition-icongeek26-linear-colour-icongeek26.png' };
+const iChevre = { id: 'iChevre', name: 'Chèvre', icon: 'https://img.icons8.com/plasticine/50/000000/mozzarella.png' };
+const iRaclette = { id: 'iRaclette', name: 'Raclette', icon: 'https://img.icons8.com/external-vitaliy-gorbachev-lineal-color-vitaly-gorbachev/60/000000/external-cheese-oktoberfest-vitaliy-gorbachev-lineal-color-vitaly-gorbachev.png' };
 
 //Objets for each ingredient in the categories of Condiments.
-iTomate = { id: 'iTomate', name: 'Tomate', icon: 'https://img.icons8.com/color/48/000000/tomatoes.png' };
-iEpinard = { id: 'iEpinard', name: 'Épinard', icon: 'https://img.icons8.com/color/48/000000/spinach.png' };
-iSalade = { id: 'iSalade', name: 'Salade', icon: 'https://img.icons8.com/color/48/000000/cabbage.png' };
-iAneth = { id: 'iAneth', name: 'Aneth', icon: 'https://img.icons8.com/color/48/000000/gailan.png' };
-iPatate = { id: 'iPatate', name: 'Pomme de Terre', icon: 'https://img.icons8.com/color/48/000000/vegetables-bag.png' };
+const iTomate = { id: 'iTomate', name: 'Tomate', icon: 'https://img.icons8.com/color/48/000000/tomatoes.png' };
+const iEpinard = { id: 'iEpinard', name: 'Épinard', icon: 'https://img.icons8.com/color/48/000000/spinach.png' };
+const iSalade = { id: 'iSalade', name: 'Salade', icon: 'https://img.icons8.com/color/48/000000/cabbage.png' };
+const iAneth = { id: 'iAneth', name: 'Aneth', icon: 'https://img.icons8.com/color/48/000000/gailan.png' };
+const iPatate = { id: 'iPatate', name: 'Pomme de Terre', icon: 'https://img.icons8.com/color/48/000000/vegetables-bag.png' };
 
 //Objets for each ingredient in the categories of Sauces.
-iHuiledOlive = { id: 'iHuiledOlive', name: 'Huile d\'Olive', icon: 'https://img.icons8.com/color/48/000000/olive-oil.png' };
-iCremeFraiche = { id: 'iCremeFraiche', name: 'Crême Fraiche', icon: 'https://img.icons8.com/ultraviolet/48/000000/honey.png' };
-iSauceBurger = { id: 'iSauceBurger', name: 'Sauce Burger', icon: 'https://img.icons8.com/color/48/000000/sauce-bottle.png' };
+const iHuiledOlive = { id: 'iHuiledOlive', name: 'Huile d\'Olive', icon: 'https://img.icons8.com/color/48/000000/olive-oil.png' };
+const iCremeFraiche = { id: 'iCremeFraiche', name: 'Crême Fraiche', icon: 'https://img.icons8.com/ultraviolet/48/000000/honey.png' };
+const iSauceBurger = { id: 'iSauceBurger', name: 'Sauce Burger', icon: 'https://img.icons8.com/color/48/000000/sauce-bottle.png' };
 
 //Objets for each ingredient in the categories of Misc.
-iNoix = { id: 'iNoix', name: 'Noix', icon: 'https://img.icons8.com/color/50/000000/pecan.png' };
-iCitron = { id: 'iCitron', name: 'Citron', icon: 'https://img.icons8.com/color/50/000000/citrus.png' };
-iMiel = { id: 'iMiel', name: 'Miel', icon: 'https://img.icons8.com/color/48/000000/honey-spoon.png' };
+const iNoix = { id: 'iNoix', name: 'Noix', icon: 'https://img.icons8.com/color/50/000000/pecan.png' };
+const iCitron = { id: 'iCitron', name: 'Citron', icon: 'https://img.icons8.com/color/50/000000/citrus.png' };
+const iMiel = { id: 'iMiel', name: 'Miel', icon: 'https://img.icons8.com/color/48/000000/honey-spoon.png' };
 
 
 //Object for the each category.
-cViande = { id: 'cViande', name: 'Viandes', value: new Array(iJambon, iPouletFume, iOeuf, iThon, iSaumonFume, iViandeHachee, iLardons) };
-cFromage = { id: 'cFromage', name: 'Fromages', value: new Array(iBrie, iEmmental, iChevre, iRaclette) };
-cCondiment = { id: 'cCondiment', name: 'Condiments', value: new Array(iTomate, iEpinard, iSalade, iAneth, iPatate) };
-cSauce = { id: 'cSauce', name: 'Sauces', value: new Array(iHuiledOlive, iCremeFraiche, iSauceBurger) };
-cMisc = { id: 'cMisc', name: 'Misc', value: new Array(iNoix, iCitron, iMiel) };
+const cViande = { id: 'cViande', name: 'Viandes', value: new Array(iJambon, iPouletFume, iOeuf, iThon, iSaumonFume, iViandeHachee, iLardons) };
+const cFromage = { id: 'cFromage', name: 'Fromages', value: new Array(iBrie, iEmmental, iChevre, iRaclette) };
+const cCondiment = { id: 'cCondiment', name: 'Condiments', value: new Array(iTomate, iEpinard, iSalade, iAneth, iPatate) };
+const cSauce = { id: 'cSauce', name: 'Sauces', value: new Array(iHuiledOlive, iCremeFraiche, iSauceBurger) };
+const cMisc = { id: 'cMisc', name: 'Misc', value: new Array(iNoix, iCitron, iMiel) };
 
 //Setting up the array for all the different ingredients and categories.
-category = new Array(cViande, cFromage, cCondiment, cSauce, cMisc);
+const category = new Array(cViande, cFromage, cCondiment, cSauce, cMisc);
 
 //Shuffeling all the categories ingredients.
-for (k = 0; k < category.length; k++) {
+for (let k = 0; k < category.length; k++) {
     shuffle(category[k].value);
 }
 
-
-
 // Map & Array of galettes.
 
-gDouble = { id: 'gDouble', name: 'La Double', value: new Array(iJambon.id, iEmmental.id) };
-gComplete = { id: 'gComplete', name: 'La Complète', value: new Array(iOeuf.id, iEmmental.id, iJambon.id) };
-gFermiere = { id: 'gFermiere', name: 'La Fermière', value: new Array(iPouletFume.id, iEmmental.id, iOeuf.id) };
-gVegetarienne = { id: 'gVegetarienne', name: 'La Végetarienne', value: new Array(iChevre.id, iSalade.id, iHuiledOlive.id, iTomate.id) };
-gTroisFromage = { id: 'gTroisFromage', name: 'La Trois Fromages', value: new Array(iBrie.id, iChevre.id, iEmmental.id) };
-gPopeye = { id: 'gPopeye', name: 'La Popeye', value: new Array(iOeuf.id, iEpinard.id, iChevre.id) };
-gThonthon = { id: 'gThonthon', name: 'La Thonthon', value: new Array(iOeuf.id, iThon.id, iEmmental.id, iCitron.id, iTomate.id) };
-gBiquette = { id: 'gBiquette', name: 'La Biquette', value: new Array(iChevre.id, iSalade.id, iNoix.id, iMiel.id) };
-gNordique = { id: 'gNordique', name: 'La Nordique', value: new Array(iSaumonFume.id, iCremeFraiche.id, iAneth.id, iCitron.id) };
-gBurger = { id: 'gBurger', name: 'La Burger', value: new Array(iViandeHachee.id, iEmmental.id, iTomate.id, iSauceBurger.id) };
-gRaclette = { id: 'gRaclette', name: 'La Raclette', value: new Array(iRaclette.id, iPatate.id, iLardons.id, iCremeFraiche.id) };
+const gDouble = { id: 'gDouble', name: 'La Double', value: new Array(iJambon.id, iEmmental.id) };
+const gComplete = { id: 'gComplete', name: 'La Complète', value: new Array(iOeuf.id, iEmmental.id, iJambon.id) };
+const gFermiere = { id: 'gFermiere', name: 'La Fermière', value: new Array(iPouletFume.id, iEmmental.id, iOeuf.id) };
+const gVegetarienne = { id: 'gVegetarienne', name: 'La Végetarienne', value: new Array(iChevre.id, iSalade.id, iHuiledOlive.id, iTomate.id) };
+const gTroisFromage = { id: 'gTroisFromage', name: 'La Trois Fromages', value: new Array(iBrie.id, iChevre.id, iEmmental.id) };
+const gPopeye = { id: 'gPopeye', name: 'La Popeye', value: new Array(iOeuf.id, iEpinard.id, iChevre.id) };
+const gThonthon = { id: 'gThonthon', name: 'La Thonthon', value: new Array(iOeuf.id, iThon.id, iEmmental.id, iCitron.id, iTomate.id) };
+const gBiquette = { id: 'gBiquette', name: 'La Biquette', value: new Array(iChevre.id, iSalade.id, iNoix.id, iMiel.id) };
+const gNordique = { id: 'gNordique', name: 'La Nordique', value: new Array(iSaumonFume.id, iCremeFraiche.id, iAneth.id, iCitron.id) };
+const gBurger = { id: 'gBurger', name: 'La Burger', value: new Array(iViandeHachee.id, iEmmental.id, iTomate.id, iSauceBurger.id) };
+const gRaclette = { id: 'gRaclette', name: 'La Raclette', value: new Array(iRaclette.id, iPatate.id, iLardons.id, iCremeFraiche.id) };
 
 const galettesKey = { id: 'galettes', value: new Array(gDouble, gComplete, gFermiere, gVegetarienne, gTroisFromage, gPopeye, gThonthon, gBiquette, gNordique, gBurger, gRaclette) }
 
-// for (var k = 0; k < galettesKey.length; k++) { //Sort the aliments of all the galettes by alphabetical order.
-//     galettes.get(galettesKey[k]).sort();
-// }
-
-for (var k = 0; k < galettesKey.value.length; k++) {
+for (let k = 0; k < galettesKey.value.length; k++) {
     galettesKey.value[k].value.sort();
 }
 
@@ -82,24 +76,22 @@ function shuffle(array) { //randomise the order of the galettes.
     array.sort(() => Math.random() - 0.5);
 }
 
-// shuffle(galettesKey);
-
-
 shuffle(galettesKey.value);
 
-var galettesToFind = 0; //initiate the order of galette to find.
-var galettesFound = 0; //count the number of good answer.
-var answerWasShowed = 0; //initiate if the answer was showed.
-var ingredientMismatch = 0; //initiate if the answer was found with a mistake.
+let galettesToFind = 0; //initiate the order of galette to find.
+let galettesFound = 0; //count the number of good answer.
+let answerWasShowed = 0; //initiate if the answer was showed.
+let ingredientMismatch = 0; //initiate if the answer was found with a mistake.
 
 document.body.setAttribute('onload', 'startTheGame()') //Setting the trigger of the function to start the game.
 
 function startTheGame() { //Launch the first galettes to find.
 
     document.getElementById("findLength").value = galettesKey.value[galettesToFind].value.length + ' ingredients';
+
     for (x = 0; x < galettesKey.value.length; x++) { // Setting-up the initial position of the galettes to find.
 
-        var elem = document.getElementById(galettesKey.value[x].id);
+        const elem = document.getElementById(galettesKey.value[x].id);
         elem.style.zIndex = (galettesKey.value.length + 2) - x; //Their z-index by their order of guess.
         elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
         elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
@@ -120,13 +112,12 @@ function galettesToFindSelector() { //Pass to the next galettes when the answer 
     }
 }
 
-const userAnswer = new Array() //initiate his input.
+let userAnswer = new Array() //initiate his input.
 
 function resetButtons() { //Reset buttons to the unselected state.
-    for (var k = 0; k < inputID.length; k++) {
+    for (let k = 0; k < inputID.length; k++) {
         document.getElementById(inputID[k]).setAttribute("class", "foodTypeUnselected");
     }
-
 
     userAnswer.splice(0, userAnswer.length) //Resetting the Answer of the user
     document.getElementById("answer").value = "Show Answer" // Setting up the restart button at the end.
@@ -182,8 +173,10 @@ function btnclick(btn) { //Function on click of the button.
 }
 
 function answerclick(btn) { // Show the solution to the galette.
-    answerWasShowed = 1
+
     btn.class = btn.className
+    answerWasShowed = 1
+
     if (btn.class == "foodTypeUnselected" && galettesFound < galettesKey.value.length) { //if the button is unselected before he click.
         btn.setAttribute("class", "foodTypeSelected"); //Showing the answer button as selected.
 
@@ -275,32 +268,32 @@ function compareUserToGalettes() { //Compare the User Input with the Galettes to
 
 
 //Creating the buttons for each ingredients and their sections.
-var locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
+const locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
 
 for (k = 0; k < category.length; k++) { //Loop for all the category name.
 
     //Creating the section for the category name.
-    var sectionOfCategory = document.createElement('section');
+    let sectionOfCategory = document.createElement('section');
     sectionOfCategory.classList.add('centertest');
     sectionOfCategory.id = category[k].id;
     locationOfTheButtons.appendChild(sectionOfCategory);
 
     //Creating the Title of the category.
-    var hfour = document.createElement('h4');
+    let hfour = document.createElement('h4');
     hfour.classList.add('categorieTitle');
     hfour.id = 'center';
     hfour.innerHTML = category[k].name;
     sectionOfCategory.appendChild(hfour);
 
     //Creating the section for the ingredients buttons.
-    var sectionOfIngredient = document.createElement('section');
+    let sectionOfIngredient = document.createElement('section');
     sectionOfIngredient.id = 'center-button';
     sectionOfCategory.appendChild(sectionOfIngredient);
 
     for (x = 0; x < (category[k].value).length; x++) { //Loops for all the buttons.
 
         //Creating the button element of the ingredient.
-        var buttonOfIngredient = document.createElement('button');
+        let buttonOfIngredient = document.createElement('button');
         buttonOfIngredient.classList.add('foodTypeUnselected');
         buttonOfIngredient.value = (category[k].value)[x].value;
         buttonOfIngredient.setAttribute('onclick', 'btnclick(this)');
@@ -308,13 +301,13 @@ for (k = 0; k < category.length; k++) { //Loop for all the category name.
         sectionOfIngredient.appendChild(buttonOfIngredient);
 
         //Adding the name to the button.
-        var divOfIngredientName = document.createElement('div')
+        let divOfIngredientName = document.createElement('div')
         divOfIngredientName.id = 'button-desc';
         divOfIngredientName.innerHTML = (category[k].value)[x].name;
         buttonOfIngredient.appendChild(divOfIngredientName);
 
         //Adding the icon to the button.
-        var imgOfIngredient = document.createElement('img');
+        let imgOfIngredient = document.createElement('img');
         imgOfIngredient.id = 'button-icon';
         imgOfIngredient.src = (category[k].value)[x].icon;
         buttonOfIngredient.appendChild(imgOfIngredient);
@@ -324,7 +317,7 @@ for (k = 0; k < category.length; k++) { //Loop for all the category name.
     }
 }
 
-var AnswerLocation = document.getElementById('answer');
+let AnswerLocation = document.getElementById('answer');
 locationOfTheButtons.appendChild(AnswerLocation);
 
 //Creating the finding names divs.
@@ -357,9 +350,9 @@ for (k = (galettesKey.value.length - 1); k >= 0; k--) {
 
 function moveAnswer(idAnswer) { //Function to move the galette found to the right.
 
-    var elem = $('#' + idAnswer + 'S').position();
-    var x = elem.left //getting the x of the galette found.
-    var y = elem.top; //getting the y of the galette found.
+    let elem = $('#' + idAnswer + 'S').position();
+    let x = elem.left //getting the x of the galette found.
+    let y = elem.top; //getting the y of the galette found.
 
     $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
     $('#' + idAnswer).animate({ top: y }, { duration: 2500 }); //Moving the answer to the position in a y axe.
