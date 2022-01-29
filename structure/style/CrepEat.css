@@ -20,16 +20,7 @@
     width: 15%;
     
 }
-.findGalette{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin:auto;
-    background-color: #3AABB5;
-    width: 188.9px;
-    height: 55px;
-}
+
 .ingredientHint{
     display: flex;
     justify-content: center;
@@ -37,7 +28,7 @@
     flex-direction: column;
     margin:auto;
     background-color: #90C5CB;   
-    width: 188.9px;
+    width: 185px;
     height: 35px;
     margin-bottom: 1em;
 }
@@ -84,75 +75,43 @@
 .categorieTitle{
     padding-top: 4px;
 }
-
-.foodTypeUnselected {
+[class*="foodType"]{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-style: dashed;
     margin:0.5em;
-    background-color: rgba(255, 255, 255, 0.300);
     width: 160px;
     height: 55px;
+    border-style: solid;
+}
+.foodTypeUnselected {
+    border-style: dashed;
+    background-color: rgba(255, 255, 255, 0.300);
 }
 
 .foodTypeUnselectedMistake{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
     border-color: #E26D5A;
-    margin:0.5em;
     background-color: rgba(255, 255, 255, 0.300);
-    width: 160px;
-    height: 55px;
 }
 
 .foodTypeSelected{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-style: dashed;
-    margin:0.5em;
     background-color: rgba(29, 204, 143,0.900);
-    width: 160px;
-    height: 55px;
 }
 
 .foodTypeSelectedAnswer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
     border-color: chartreuse;
-    margin:0.5em;
     background-color: rgba(29, 204, 143,0.900);
-    width: 160px;
-    height: 55px;
 }
 
 .foodTypeSelectedMistake{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
     border-color: #E26D5A;
-    margin:0.5em;
     background-color: rgba(29, 204, 143,0.900);
-    width: 160px;
-    height: 55px;
 }
 
 .foodTypeAnswer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-style: solid;
     border-color: chartreuse;
-    margin:0.5em;
     background-color: rgba(255, 255, 255, 0.300);
-    width: 160px;
-    height: 55px;
 }
 
 #button-icon {
@@ -167,55 +126,50 @@
     height: auto;
 }
 
-.galettesToFindGrey{
+.findGalette{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #D8DDEF;
-    width: 188.9px;
+    flex-direction: column;
+    margin:auto;
+    background-color: #3AABB5;;
+    width: 185px;
     height: 55px;
+}
+
+[class*="galettes"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 185px;
+    height: 55px;
+}
+
+.galettesToFindGrey{
+    background-color: #D8DDEF;
+
 }
 
 .galettesToFind{
     position: absolute;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #3AABB5;
-    width: 188.9px;
-    height: 55px;
 }
 
 .galettesFound {
     position: absolute;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #1DCC8F;
-    width: 188.9px;
-    height: 55px;
 }
 
 .galettesMistake {
     position: absolute;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #E8C547;
-    width: 188.9px;
-    height: 55px;
 }
 
 .galettesAnswerShowed {
     position: absolute;
     z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #E26D5A;
-    width: 188.9px;
-    height: 55px;
 }
