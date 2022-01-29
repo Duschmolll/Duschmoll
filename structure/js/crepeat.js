@@ -351,12 +351,34 @@ for (k = (galettesKey.value.length - 1); k >= 0; k--) {
 function moveAnswer(idAnswer) { //Function to move the galette found to the right.
 
     let elem = $('#' + idAnswer + 'S').position();
-    let x = elem.left //getting the x of the galette found.
+    let x = elem.left; //getting the x of the galette found.
     let y = elem.top; //getting the y of the galette found.
 
     $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
     $('#' + idAnswer).animate({ top: y }, { duration: 2500 }); //Moving the answer to the position in a y axe.
+
 }
+
+window.addEventListener('resize', function (event) {
+    console.log('Windows Resized')
+    if (galettesFound > 0) {
+        for (let k = 0; k < galettesFound; k++) {
+
+            const elem = document.getElementById(galettesKey.value[k].id);
+            elem.style.left = document.getElementById(galettesKey.value[k].id + "S").offsetLeft + "px"; //Their X
+            elem.style.top = document.getElementById(galettesKey.value[k].id + "S").offsetTop + "px"; //Their Y
+
+        }
+    } else {
+        for (k = (galettesKey.value.length - 1); k >= galettesFound; k--) {
+
+            const elem = document.getElementById(galettesKey.value[k].id);
+            elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
+            elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
+
+        }
+    }
+}, true);
 
 
 
