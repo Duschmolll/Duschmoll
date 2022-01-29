@@ -369,15 +369,15 @@ window.addEventListener('resize', function (event) {
             elem.style.top = document.getElementById(galettesKey.value[k].id + "S").offsetTop + "px"; //Their Y
 
         }
-    } else {
-        for (k = (galettesKey.value.length - 1); k >= galettesFound; k--) {
-
-            const elem = document.getElementById(galettesKey.value[k].id);
-            elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
-            elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
-
-        }
     }
+
+    for (k = (galettesKey.value.length - 1); k >= galettesFound; k--) {
+        const elem = document.getElementById(galettesKey.value[k].id);
+        elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
+        elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
+
+    }
+
 }, true);
 
 
