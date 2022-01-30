@@ -127,7 +127,7 @@ const iHuiledOlive = {
 };
 const iCremeFraiche = {
     id: 'iCremeFraiche',
-    ame: 'Crême Fraiche',
+    name: 'Crême Fraiche',
     icon: 'https://img.icons8.com/ultraviolet/48/000000/honey.png',
     source: 'https://icons8.com/icon/51200/honey',
     desc: 'Honey icon by Icons8'

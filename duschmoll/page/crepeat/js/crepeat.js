@@ -25,7 +25,7 @@ let galettesFound = 0; //count the number of good answer.
 let answerWasShowed = 0; //initiate if the answer was showed.
 let ingredientMismatch = 0; //initiate if the answer was found with a mistake.
 
-document.body.setAttribute('onload', 'startTheGame()') //Setting the trigger of the function to start the game.
+window.addEventListener("load", loadingGame()); window.addEventListener("load", startTheGame());
 
 function startTheGame() { //Launch the first galettes to find.
 
@@ -154,7 +154,7 @@ function answerclick(btn) { // Show the solution to the galette.
     }
 
     if (galettesFound >= galettesList.value.length) {
-        window.location.reload(true);
+        restartGame();
         return false;
     }
 }
@@ -194,7 +194,7 @@ function compareUserToGalettes() { //Compare the User Input with the Galettes to
         } else {
             elem.setAttribute("class", "galettesFound"); //Showing the galettes as found.
         }
-        moveAnswer(galettesList.value[galettesToFind].id)
+        moveAnswer(galettesList.value[galettesToFind].id);
         galettesToFindSelector();
     } else if (userAnswer.length >= galettesList.value[galettesToFind].value.length) {
         //Showing the wrong ingredients selected if all the number of ingr selected = the number of ing needed for the galette.
@@ -209,85 +209,87 @@ function compareUserToGalettes() { //Compare the User Input with the Galettes to
 
 
 //Creating the buttons for each ingredients and their sections.
-const locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
 
-for (k = 0; k < category.length; k++) { //Loop for all the category name.
+function loadingGame() {
+    const locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
 
-    //Creating the section for the category name.
-    let sectionOfCategory = document.createElement('section');
-    sectionOfCategory.classList.add('centertest');
-    sectionOfCategory.id = category[k].id;
-    locationOfTheButtons.appendChild(sectionOfCategory);
+    for (k = 0; k < category.length; k++) { //Loop for all the category name.
 
-    //Creating the Title of the category.
-    let hfour = document.createElement('h4');
-    hfour.classList.add('categorieTitle');
-    hfour.id = 'center';
-    hfour.innerHTML = category[k].name;
-    sectionOfCategory.appendChild(hfour);
+        //Creating the section for the category name.
+        let sectionOfCategory = document.createElement('section');
+        sectionOfCategory.classList.add('centertest');
+        sectionOfCategory.id = category[k].id;
+        locationOfTheButtons.appendChild(sectionOfCategory);
 
-    //Creating the section for the ingredients buttons.
-    let sectionOfIngredient = document.createElement('section');
-    sectionOfIngredient.id = 'center-button';
-    sectionOfCategory.appendChild(sectionOfIngredient);
+        //Creating the Title of the category.
+        let hfour = document.createElement('h4');
+        hfour.classList.add('categorieTitle');
+        hfour.id = 'center';
+        hfour.innerHTML = category[k].name;
+        sectionOfCategory.appendChild(hfour);
 
-    for (x = 0; x < (category[k].value).length; x++) { //Loops for all the buttons.
+        //Creating the section for the ingredients buttons.
+        let sectionOfIngredient = document.createElement('section');
+        sectionOfIngredient.id = 'center-button';
+        sectionOfCategory.appendChild(sectionOfIngredient);
 
-        //Creating the button element of the ingredient.
-        let buttonOfIngredient = document.createElement('button');
-        buttonOfIngredient.classList.add('foodTypeUnselected');
-        buttonOfIngredient.value = (category[k].value)[x].value;
-        buttonOfIngredient.setAttribute('onclick', 'btnclick(this)');
-        buttonOfIngredient.id = (category[k].value)[x].id;
-        sectionOfIngredient.appendChild(buttonOfIngredient);
+        for (x = 0; x < (category[k].value).length; x++) { //Loops for all the buttons.
 
-        //Adding the name to the button.
-        let divOfIngredientName = document.createElement('div')
-        divOfIngredientName.id = 'button-desc';
-        divOfIngredientName.innerHTML = (category[k].value)[x].name;
-        buttonOfIngredient.appendChild(divOfIngredientName);
+            //Creating the button element of the ingredient.
+            let buttonOfIngredient = document.createElement('button');
+            buttonOfIngredient.classList.add('foodTypeUnselected');
+            buttonOfIngredient.value = (category[k].value)[x].value;
+            buttonOfIngredient.setAttribute('onclick', 'btnclick(this)');
+            buttonOfIngredient.id = (category[k].value)[x].id;
+            sectionOfIngredient.appendChild(buttonOfIngredient);
 
-        //Adding the icon to the button.
-        let imgOfIngredient = document.createElement('img');
-        imgOfIngredient.id = 'button-icon';
-        imgOfIngredient.src = (category[k].value)[x].icon;
-        buttonOfIngredient.appendChild(imgOfIngredient);
+            //Adding the name to the button.
+            let divOfIngredientName = document.createElement('div')
+            divOfIngredientName.id = 'button-desc';
+            divOfIngredientName.innerHTML = (category[k].value)[x].name;
+            buttonOfIngredient.appendChild(divOfIngredientName);
 
-        //Getting all the id for each buttons.
-        inputID.push((category[k].value)[x].id);
+            //Adding the icon to the button.
+            let imgOfIngredient = document.createElement('img');
+            imgOfIngredient.id = 'button-icon';
+            imgOfIngredient.src = (category[k].value)[x].icon;
+            buttonOfIngredient.appendChild(imgOfIngredient);
+
+            //Getting all the id for each buttons.
+            inputID.push((category[k].value)[x].id);
+        }
+    }
+
+    let AnswerLocation = document.getElementById('answer');
+    locationOfTheButtons.appendChild(AnswerLocation);
+
+    //Creating the finding names divs.
+    divOfFindingParent = document.getElementById('won');
+
+    for (k = 0; k < galettesList.value.length; k++) {
+        divOfFinding = document.createElement('div')
+        divOfFinding.classList.add('galettesToFind');
+        divOfFinding.id = galettesList.value[k].id;
+        divOfFinding.innerHTML = galettesList.value[k].name;
+        divOfFindingParent.appendChild(divOfFinding);
+    }
+
+    //Creating the found divs.
+    divOfFoundParent = document.getElementById('right-tab');
+
+    for (k = (galettesList.value.length - 1); k >= 0; k--) {
+        divOfFound = document.createElement('div')
+        divOfFound.classList.add('galettesToFindGrey');
+        divOfFound.id = (galettesList.value[(k)].id) + "S";
+        if (k < 9) {
+            divOfFound.innerHTML = " -- 0" + (k + 1) + " -- ";
+        }
+        else {
+            divOfFound.innerHTML = " -- " + (k + 1) + " -- ";
+        }
+        divOfFoundParent.appendChild(divOfFound);
     }
 }
-
-let AnswerLocation = document.getElementById('answer');
-locationOfTheButtons.appendChild(AnswerLocation);
-
-//Creating the finding names divs.
-divOfFindingParent = document.getElementById('won');
-
-for (k = 0; k < galettesList.value.length; k++) {
-    divOfFinding = document.createElement('div')
-    divOfFinding.classList.add('galettesToFind');
-    divOfFinding.id = galettesList.value[k].id;
-    divOfFinding.innerHTML = galettesList.value[k].name;
-    divOfFindingParent.appendChild(divOfFinding);
-}
-
-//Creating the found divs.
-divOfFoundParent = document.getElementById('right-tab');
-
-for (k = (galettesList.value.length - 1); k >= 0; k--) {
-    divOfFound = document.createElement('div')
-    divOfFound.classList.add('galettesToFindGrey');
-    divOfFound.id = (galettesList.value[(k)].id) + "S";
-    if (k < 9) {
-        divOfFound.innerHTML = " -- 0" + (k + 1) + " -- ";
-    }
-    else {
-        divOfFound.innerHTML = " -- " + (k + 1) + " -- ";
-    }
-    divOfFoundParent.appendChild(divOfFound);
-}
-
 
 function moveAnswer(idAnswer) { //Function to move the galette found to the right.
 
@@ -297,7 +299,7 @@ function moveAnswer(idAnswer) { //Function to move the galette found to the righ
 
     $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
     $('#' + idAnswer).animate({ top: y }, { //Moving the answer to the position in a y axe.
-        duration: 2500, complete: function () { //Locking the galette into the div.
+        duration: 2500, done: function () { //Locking the galette into the div.
             elem = document.getElementById(idAnswer);
             target = document.getElementById(idAnswer + 'S');
             elem.style.left = 'auto';
@@ -353,6 +355,41 @@ function credit() {
     }
 }
 
+function restartGame() {
+    //Reseting the variables to 0.
+    galettesToFind = 0; //initiate the order of galette to find.
+    galettesFound = 0; //count the number of good answer.
+    answerWasShowed = 0; //initiate if the answer was showed.
+    ingredientMismatch = 0; //initiate if the answer was found with a mistake.
 
+    //Deleting the ingredients.
+    for (k = 0; k < category.length; k++) {
+        let divToDelete = document.getElementById(category[k].id);
+        divToDelete.parentNode.removeChild(divToDelete);
+    }
 
+    //Deleting the galettes to find.
+    for (k = 0; k < galettesList.value.length; k++) {
+        let divToDelete = document.getElementById(galettesList.value[k].id);
+        divToDelete.parentNode.removeChild(divToDelete);
+        // $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
+    }
+
+    //Deleting the galettes found final location.
+    for (k = (galettesList.value.length - 1); k >= 0; k--) {
+        let divToDelete = document.getElementById((galettesList.value[(k)].id) + "S");
+        divToDelete.parentNode.removeChild(divToDelete);
+    }
+
+    //Shuffeling all the ingredients.
+    for (let k = 0; k < category.length; k++) {
+        shuffle(category[k].value);
+    }
+    //Shuffeling the order of galette.
+    shuffle(galettesList.value);
+
+    //Restarting the game.
+    loadingGame();
+    startTheGame();
+}
 
