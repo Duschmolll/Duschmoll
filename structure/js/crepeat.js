@@ -338,7 +338,7 @@ for (k = (galettesKey.value.length - 1); k >= 0; k--) {
     divOfFound = document.createElement('div')
     divOfFound.classList.add('galettesToFindGrey');
     divOfFound.id = (galettesKey.value[(k)].id) + "S";
-    if (k < 09) {
+    if (k < 9) {
         divOfFound.innerHTML = " -- 0" + (k + 1) + " -- ";
     }
     else {
@@ -356,7 +356,7 @@ function moveAnswer(idAnswer) { //Function to move the galette found to the righ
 
     $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
     $('#' + idAnswer).animate({ top: y }, { //Moving the answer to the position in a y axe.
-        duration: 2500, complete: function () { //Locking the galettes into the div.
+        duration: 2500, complete: function () { //Locking the galette into the div.
             elem = document.getElementById(idAnswer);
             target = document.getElementById(idAnswer + 'S');
             elem.style.left = 'auto';
@@ -369,14 +369,12 @@ function moveAnswer(idAnswer) { //Function to move the galette found to the righ
 
 }
 
-window.addEventListener('resize', function (event) {
-    console.log('Windows Resized')
+window.addEventListener('resize', function () {
 
     for (k = (galettesKey.value.length - 1); k >= galettesFound; k--) {
         const elem = document.getElementById(galettesKey.value[k].id);
         elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
         elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
-
     }
 
 }, true);
