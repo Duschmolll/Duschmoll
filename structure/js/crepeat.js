@@ -355,21 +355,22 @@ function moveAnswer(idAnswer) { //Function to move the galette found to the righ
     let y = elem.top; //getting the y of the galette found.
 
     $('#' + idAnswer).animate({ left: x }, { duration: 2500 }); //Moving the answer to the position in a x axe.
-    $('#' + idAnswer).animate({ top: y }, { duration: 2500 }); //Moving the answer to the position in a y axe.
+    $('#' + idAnswer).animate({ top: y }, { //Moving the answer to the position in a y axe.
+        duration: 2500, complete: function () { //Locking the galettes into the div.
+            elem = document.getElementById(idAnswer);
+            target = document.getElementById(idAnswer + 'S');
+            elem.style.left = 'auto';
+            elem.style.top = 'auto';
+            elem.style.position = 'static';
+            target.innerHTML = '';
+            target.appendChild(elem);
+        }
+    });
 
 }
 
 window.addEventListener('resize', function (event) {
     console.log('Windows Resized')
-    if (galettesFound > 0) {
-        for (let k = 0; k < galettesFound; k++) {
-
-            const elem = document.getElementById(galettesKey.value[k].id);
-            elem.style.left = document.getElementById(galettesKey.value[k].id + "S").offsetLeft + "px"; //Their X
-            elem.style.top = document.getElementById(galettesKey.value[k].id + "S").offsetTop + "px"; //Their Y
-
-        }
-    }
 
     for (k = (galettesKey.value.length - 1); k >= galettesFound; k--) {
         const elem = document.getElementById(galettesKey.value[k].id);
@@ -379,6 +380,14 @@ window.addEventListener('resize', function (event) {
     }
 
 }, true);
+
+// elem = document.getElementById('gDouble');
+// target = document.getElementById('gDoubleS');
+// elem.style.left = 'auto';
+// elem.style.top = 'auto';
+// elem.style.position = 'static';
+// target.innerHTML = '';
+// target.appendChild(elem);
 
 
 
