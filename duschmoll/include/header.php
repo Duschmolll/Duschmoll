@@ -1,12 +1,17 @@
+<?php
+$path = "http://" . $_SERVER['SERVER_NAME'];
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Title of the document</title>
-    <script src="../lib/jquery.min.js"></script>
-    <link rel="stylesheet" href="../style/main.css">
-    <link rel="stylesheet" href="../style/CrepEat.css">
-    <link rel="icon" type="image/x-icon" href="../ressource/icon/favicon2.ico" />
+    <script src="<?php echo $path; ?>/duschmoll/lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="<?php echo $path; ?>/duschmoll/res/css/main.css">
+    <link rel="icon" type="image/x-icon" href="<?php echo $path; ?>/duschmoll/res/img/favicon.ico" />
 </head>
 
 <body class="background-main">

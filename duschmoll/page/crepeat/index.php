@@ -1,6 +1,7 @@
-<?php
-include_once "../header.php";
-?>
+<?php include_once "../../include/header.php" ?>
+<style>
+    <?php include_once "res/css/crepeat.css"; ?>
+</style>
 
 <div class="main-post">
     <section id="post" style="width: 1600px;">
@@ -39,6 +40,6 @@ include_once "../header.php";
 
 <div class="categories-block"></div>
 
-<script src="../js/crepeat.js"></script>
+<script src="js/crepeat.js"></script>
 
-<?php include_once "../footer.php" ?>
+<?php include_once "../../include/footer.php" ?>
