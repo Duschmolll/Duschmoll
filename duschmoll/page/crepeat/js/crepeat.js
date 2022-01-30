@@ -372,7 +372,8 @@ function restartGame() {
     for (k = 0; k < galettesList.value.length; k++) {
         let divToDelete = document.getElementById(galettesList.value[k].id);
         divToDelete.parentNode.removeChild(divToDelete);
-        // $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
+        $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
+        $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
     }
 
     //Deleting the galettes found final location.
