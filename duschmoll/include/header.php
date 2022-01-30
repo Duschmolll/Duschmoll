@@ -1,14 +1,12 @@
 <?php
 $path = "http://" . $_SERVER['SERVER_NAME'];
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Title of the document</title>
+    <title>duschmoll.org</title>
     <script src="<?php echo $path; ?>/duschmoll/lib/jquery.min.js"></script>
     <link rel="stylesheet" href="<?php echo $path; ?>/duschmoll/res/css/main.css">
     <link rel="icon" type="image/x-icon" href="<?php echo $path; ?>/duschmoll/res/img/favicon.ico" />
@@ -19,12 +17,13 @@ $path = "http://" . $_SERVER['SERVER_NAME'];
     <header id="header">
         <div class="site-title-nav">
             <h1 class="site-title">
-                <a href="index.php">duschmoll<span>.org</span></a>
+                <a href="<?php echo $path; ?>/duschmoll/index.php">duschmoll<span>.org</span></a>
             </h1>
             <nav id="topnav" class="hover-nav">
                 <section class="nav">
                     <a class="navbtn" href="projet.html">Projets</a>
                     <div class="nav-content">
+                        <a href="<?php echo $path; ?>/duschmoll/page/crepeat">Crep'Eat</a>
                         <a href="binding.html">CS:GO Binding</a>
                         <a href="plant-rehab.html">Plant Rehab</a>
                     </div>

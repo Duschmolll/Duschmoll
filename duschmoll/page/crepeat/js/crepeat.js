@@ -5,7 +5,13 @@ inputID.push("answer") //adding the button for the answers.
 //Setting up the object for the buttons.
 
 //Objets for each ingredient in the categories of Viandes.
-const iJambon = { id: 'iJambon', name: 'Jambon', icon: 'https://img.icons8.com/color/48/000000/jamon.png', source: 'https://icons8.com/icon/36788/jamon', desc: 'Jamon icon by Icons8' };
+const iJambon = {
+    id: 'iJambon',
+    name: 'Jambon',
+    icon: 'https://img.icons8.com/color/48/000000/jamon.png',
+    source: 'https://icons8.com/icon/36788/jamon',
+    desc: 'Jamon icon by Icons8'
+};
 const iPouletFume = { id: 'iPouletFume', name: 'Poulet Fumé', icon: 'https://img.icons8.com/color/48/000000/thanksgiving.png', source: 'https://icons8.com/icon/33471/thanksgiving', desc: 'Thanksgiving icon by Icons8' };
 const iOeuf = { id: 'iOeuf', name: 'Oeuf', icon: 'https://img.icons8.com/color/48/000000/egg-carton.png', source: 'https://icons8.com/icon/SRhlkF005Oy7/egg-carton', desc: 'Egg Carton icon by Icons8' };
 const iThon = { id: 'iThon', name: 'Thon', icon: 'https://img.icons8.com/external-icongeek26-flat-icongeek26/64/fa314a/external-salmon-alaska-icongeek26-flat-icongeek26.png', source: 'https://icons8.com/icon/kvlMcTmQL4Kn/salmon', desc: 'Salmon icon by Icons8' };

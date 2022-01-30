@@ -8,7 +8,7 @@
 
             <h2>CrepEat</h2>
             <h5>24 October, 2021</h5>
-            <a href="section/crepeat">
+            <a href="page/crepeat">
                 <img src="res/img/crepeat.png" alt="Image of Crepeat game" class="image" style="object-fit: none; background: grey;">
             </a>
 
@@ -19,7 +19,7 @@
 
             <h2>Exo Post #4</h2>
             <h5>24 October, 2021</h5>
-            <a href="section/exercices/exo4.php">
+            <a href="page/exercices/exo4.php">
                 <img src="res/img/coding.jpg" alt="Image with code" class="image">
             </a>
 
@@ -30,7 +30,7 @@
 
             <h2>Exo Post #3</h2>
             <h5>17 October, 2021</h5>
-            <a href="section/exercices/exo3.php">
+            <a href="page/exercices/exo3.php">
                 <img src="res/img/coding.jpg" alt="Image with code" class="image">
             </a>
 
@@ -41,7 +41,7 @@
 
             <h2>Exo Post #2 NOT SAFE</h2>
             <h5>13 October, 2021</h5>
-            <a href="section/exercices/exo2.php">
+            <a href="page/exercices/exo2.php">
                 <img src="res/img/coding.jpg" alt="Image with code" class="image">
             </a>
 
@@ -52,7 +52,7 @@
 
             <h2>Exo Post #1</h2>
             <h5>09 October, 2021</h5>
-            <a href="section/exercices/exo1.php">
+            <a href="page/exercices/exo1.php">
                 <img src="res/img/coding.jpg" alt="Image with code" class="image">
             </a>
 
