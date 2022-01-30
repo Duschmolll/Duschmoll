@@ -25,6 +25,15 @@ include_once "../header.php";
             </section>
         </section>
 
+        <section>
+            <div onclick='credit()' id='credit'>
+                <div>Credits</div>
+                <div id='creditContent'>
+                    <div id='centerCredit'>
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 </div>
 

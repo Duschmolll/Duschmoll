@@ -175,3 +175,14 @@
     z-index: 2;
     background-color: #E26D5A;
 }
+
+#credit{
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+}
+#centerCredit{
+    display: flex;
+    justify-content: center;
+}
