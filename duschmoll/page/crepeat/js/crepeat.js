@@ -24,6 +24,7 @@ let galettesToFind = 0; //initiate the order of galette to find.
 let galettesFound = 0; //count the number of good answer.
 let answerWasShowed = 0; //initiate if the answer was showed.
 let ingredientMismatch = 0; //initiate if the answer was found with a mistake.
+let userAnswer = new Array() //initiate his input.
 
 window.addEventListener("load", loadingGame()); window.addEventListener("load", startTheGame());
 
@@ -35,8 +36,7 @@ function startTheGame() { //Launch the first galettes to find.
 
         const elem = document.getElementById(galettesList.value[x].id);
         elem.style.zIndex = (galettesList.value.length + 2) - x; //Their z-index by their order of guess.
-        elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
-        elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
+
     }
 }
 
@@ -52,8 +52,6 @@ function galettesToFindSelector() { //Pass to the next galettes when the answer 
         document.getElementById("answer").value = "Restart" // Setting up the restart button at the end.
     }
 }
-
-let userAnswer = new Array() //initiate his input.
 
 function resetButtons() { //Reset buttons to the unselected state.
     for (let k = 0; k < inputID.length; k++) {
@@ -312,16 +310,6 @@ function moveAnswer(idAnswer) { //Function to move the galette found to the righ
 
 }
 
-window.addEventListener('resize', function () {
-
-    for (k = (galettesList.value.length - 1); k >= galettesFound; k--) {
-        const elem = document.getElementById(galettesList.value[k].id);
-        elem.style.left = document.getElementById('won').offsetLeft + "px"; //Their X
-        elem.style.top = document.getElementById('won').offsetTop + "px"; //Their Y
-    }
-
-}, true);
-
 //Making the credit section:
 $("#creditContent").hide(1); //Hidding the content of the credits section.
 //Creating the credits divs.
@@ -361,6 +349,7 @@ function restartGame() {
     galettesFound = 0; //count the number of good answer.
     answerWasShowed = 0; //initiate if the answer was showed.
     ingredientMismatch = 0; //initiate if the answer was found with a mistake.
+    userAnswer = new Array() //initiate his input.
 
     //Deleting the ingredients.
     for (k = 0; k < category.length; k++) {
