@@ -40,6 +40,7 @@
 
 <div class="categories-block"></div>
 
+<script src="js/object.js"></script>
 <script src="js/crepeat.js"></script>
 
 <?php include_once "../../include/footer.php" ?>
