@@ -1,9 +1,8 @@
 <?php include_once "include/header.php" ?>
 
-<body>
+<div class="main"></div>
 
-    <div class="main"></div>
+<script src="res/js/object.js"></script>
+<script src="res/js/index.js"></script>
 
-    <script src="res/js/object.js"></script>
-    <script src="res/js/index.js"></script>
-    <?php include_once "include/footer.php" ?>
+<?php include_once "include/footer.php" ?>
