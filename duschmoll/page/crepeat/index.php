@@ -38,8 +38,6 @@
     </section>
 </div>
 
-<div class="categories-block"></div>
-
 <script src="js/object.js"></script>
 <script src="js/crepeat.js"></script>
 
