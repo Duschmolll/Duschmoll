@@ -40,7 +40,8 @@ function startTheGame() { //Launch the first galettes to find.
     }
 }
 
-function galettesToFindSelector() { //Pass to the next galettes when the answer is found.
+//Pass to the next galettes when the answer is found.
+function galettesToFindSelector() {
     galettesFound++
     resetButtons()
     elem = document.getElementById("findLength")
@@ -49,23 +50,25 @@ function galettesToFindSelector() { //Pass to the next galettes when the answer 
         elem.value = galettesList.value[galettesToFind].value.length + ' ingredients' //Showing the number of ingredient needed.
     } else {
         elem.value = 'Well Done' // Saying GJ when all the ingredient are found.
-        document.getElementById("answer").value = "Restart" // Setting up the restart button at the end.
+        document.getElementById("answer").innerHTML = "Restart" // Setting up the restart button at the end.
     }
 }
 
-function resetButtons() { //Reset buttons to the unselected state.
+//Reset buttons to the unselected state.
+function resetButtons() {
     for (let k = 0; k < inputID.length; k++) {
         document.getElementById(inputID[k]).setAttribute("class", "foodTypeUnselected");
     }
 
     userAnswer.splice(0, userAnswer.length) //Resetting the Answer of the user
-    document.getElementById("answer").value = "Show Answer" // Setting up the restart button at the end.
+    document.getElementById("answer").innerHTML = "Restart" // Setting up the restart button at the end.
     answerWasShowed = 0;
     ingredientMismatch = 0;
 
 }
 
-function btnclick(btn) { //Function on click of the button.
+//Function on click of the button.
+function btnclick(btn) {
 
     btn.class = btn.className
 
@@ -111,7 +114,8 @@ function btnclick(btn) { //Function on click of the button.
     }
 }
 
-function answerclick(btn) { // Show the solution to the galette.
+// Show the solution to the galette.
+function answerclick(btn) {
 
     btn.class = btn.className
     answerWasShowed = 1
@@ -157,12 +161,14 @@ function answerclick(btn) { // Show the solution to the galette.
     }
 }
 
-function addChoice(buttonValue) { // Add a user choice to his UserAnswer.
+// Add a user choice to his UserAnswer.
+function addChoice(buttonValue) {
     userAnswer.push(buttonValue);
     userAnswer.sort();
 }
 
-function removeChoice(buttonValue) { // Remove a user choice to his UserAnswer.
+// Remove a user choice to his UserAnswer.
+function removeChoice(buttonValue) {
 
     userAnswer.forEach(removeAnswer); //Calling all index & items to remove the ingredient he unselected.
 
@@ -173,7 +179,8 @@ function removeChoice(buttonValue) { // Remove a user choice to his UserAnswer.
     }
 }
 
-function compareUserToGalettes() { //Compare the User Input with the Galettes to Find.
+//Compare the User Input with the Galettes to Find.
+function compareUserToGalettes() {
     if (answerWasShowed == 0 || ingredientMismatch == 1) {
         for (k = 0; k < userAnswer.length; k++) {
             if (galettesList.value[galettesToFind].value.toString().search(userAnswer[k]) === -1) {
@@ -207,7 +214,6 @@ function compareUserToGalettes() { //Compare the User Input with the Galettes to
 
 
 //Creating the buttons for each ingredients and their sections.
-
 function loadingGame() {
     const locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
 
@@ -288,8 +294,8 @@ function loadingGame() {
         divOfFoundParent.appendChild(divOfFound);
     }
 }
-
-function moveAnswer(idAnswer) { //Function to move the galette found to the right.
+//Function to move the galette found to the right.
+function moveAnswer(idAnswer) {
 
     let elem = $('#' + idAnswer + 'S').position();
     let x = elem.left; //getting the x of the galette found.
@@ -334,7 +340,7 @@ for (let k = 0; k < category.length; k++) {
 
     }
 }
-
+//Showing or not the credit
 function credit() {
     if ($("#creditContent").first().is(":hidden")) {
         $("#creditContent").slideDown();
@@ -359,10 +365,9 @@ function restartGame() {
 
     //Deleting the galettes to find.
     for (k = 0; k < galettesList.value.length; k++) {
+        $('#' + galettesList.value[k].id).stop(true, false) //Stopping the animation. 
         let divToDelete = document.getElementById(galettesList.value[k].id);
         divToDelete.parentNode.removeChild(divToDelete);
-        $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
-        $('#' + galettesList.value[k].id).stop() //Stopping the animation. 
     }
 
     //Deleting the galettes found final location.

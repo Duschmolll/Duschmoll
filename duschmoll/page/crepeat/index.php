@@ -18,7 +18,7 @@
                     <output id="findLength" class="ingredientHint" value="Test"></output>
                 </section>
 
-                <input type="button" id="answer" class="foodTypeUnselected" value="Show Anwser" onclick='answerclick(this);'>
+                <output id="answer" class="foodTypeUnselected" onclick='restartGame(this);'>Show Answer</output>
 
             </section>
             <section id="right-tab">
