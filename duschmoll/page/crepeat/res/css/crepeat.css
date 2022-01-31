@@ -46,18 +46,10 @@
     border-style: none;
 }
 #cViande, #cCondiment, #cMisc{
-    border-left-style: solid;
-    border-right-style: solid;
-    border-left-width: 0.5em;    
-    border-right-width: 0.5em;
     background-color: #3AABB5;
     width: 100%;
 }
 #cFromage, #cSauce {
-    border-left-style: solid;
-    border-right-style: solid;
-    border-left-width: 0.5em;    
-    border-right-width: 0.5em;
     background-color: #90C5CB;   
     width: 100%;
 }
