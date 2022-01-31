@@ -20,8 +20,10 @@ document.addEventListener('keydown', function (event) {
 //Function to compare the User input with the answer.
 function compareAnswer() {
     console.log(answer.includes(document.getElementById(keyboardKeyPos[1]).innerHTML) === true);
+    let userAnswer = ''
     for (let k = 0; k < keyboardKeyPos.length; k++) { //Loop to check all the letters to the answer letters.
-        elem = document.getElementById(keyboardKeyPos[k])
+        elem = document.getElementById(keyboardKeyPos[k]);
+        userAnswer += elem.innerHTML;
         if (elem.innerHTML === answer[k]) { //Checking if the userAnswer[x] is equal the answer[x]. 
             elem.setAttribute('Class', 'letterRight');
         } else if (answer.includes(elem.innerHTML) === true) { //Checking if the userAnswer[x] is somewhere in the answer[x].
