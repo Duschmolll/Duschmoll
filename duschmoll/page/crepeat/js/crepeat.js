@@ -1,5 +1,10 @@
-//Declaring the var for the inputIDs
-let inputID = new Array();
+//Initiating variables.
+let galettesToFind = 0; //initiate the order of galette to find.
+let galettesFound = 0; //count the number of good answer.
+let answerWasShowed = 0; //initiate if the answer was showed.
+let ingredientMismatch = 0; //initiate if the answer was found with a mistake.
+let userAnswer = new Array(); //initiate his input.
+let inputID = new Array(); //initiate the answer choice.
 inputID.push("answer") //adding the button for the answers.
 
 //Function to randomize
@@ -20,14 +25,10 @@ for (let k = 0; k < galettesList.value.length; k++) {
     galettesList.value[k].value.sort();
 }
 
-let galettesToFind = 0; //initiate the order of galette to find.
-let galettesFound = 0; //count the number of good answer.
-let answerWasShowed = 0; //initiate if the answer was showed.
-let ingredientMismatch = 0; //initiate if the answer was found with a mistake.
-let userAnswer = new Array() //initiate his input.
-
+//Event to strat the load & the game.
 window.addEventListener("load", loadingGame()); window.addEventListener("load", startTheGame());
 
+//Function to start the game.
 function startTheGame() { //Launch the first galettes to find.
 
     document.getElementById("findLength").value = galettesList.value[galettesToFind].value.length + ' ingredients';
@@ -38,6 +39,8 @@ function startTheGame() { //Launch the first galettes to find.
         elem.style.zIndex = (galettesList.value.length + 2) - x; //Their z-index by their order of guess.
 
     }
+
+    document.getElementById("answer").innerHTML = "Show Answer" // Setting up the show answer button at the end.
 }
 
 //Pass to the next galettes when the answer is found.
@@ -61,7 +64,7 @@ function resetButtons() {
     }
 
     userAnswer.splice(0, userAnswer.length) //Resetting the Answer of the user
-    document.getElementById("answer").innerHTML = "Restart" // Setting up the restart button at the end.
+    document.getElementById("answer").innerHTML = "Show Answer" // Setting up the show answer button at the end.
     answerWasShowed = 0;
     ingredientMismatch = 0;
 
@@ -212,7 +215,6 @@ function compareUserToGalettes() {
     } else { }
 }
 
-
 //Creating the buttons for each ingredients and their sections.
 function loadingGame() {
     const locationOfTheButtons = document.getElementById('left-tab'); //Getting where to put the whole section.
@@ -348,7 +350,7 @@ function credit() {
         $("#creditContent").slideUp();
     }
 }
-
+//Function to restart the game.
 function restartGame() {
     //Reseting the variables to 0.
     galettesToFind = 0; //initiate the order of galette to find.
