@@ -20,39 +20,39 @@
                 <div class='letterClear' id='rowOneLetterFive'></div>
             </section>
             <section id='userInput'>
-                <div class='letterClear' id='rowTwoLetterOne'>W</div>
-                <div class='letterClear' id='rowTwoLetterTwo'>O</div>
-                <div class='letterClear' id='rowTwoLetterThree'>R</div>
-                <div class='letterClear' id='rowTwoLetterFour'>D</div>
-                <div class='letterClear' id='rowTwoLetterFive'>S</div>
+                <div class='letterClear' id='rowTwoLetterOne'></div>
+                <div class='letterClear' id='rowTwoLetterTwo'></div>
+                <div class='letterClear' id='rowTwoLetterThree'></div>
+                <div class='letterClear' id='rowTwoLetterFour'></div>
+                <div class='letterClear' id='rowTwoLetterFive'></div>
             </section>
             <section id='userInput'>
-                <div class='letterClear' id='rowThreeLetterOne'>W</div>
-                <div class='letterClear' id='rowThreeLetterTwo'>O</div>
-                <div class='letterClear' id='rowThreeLetterThree'>R</div>
-                <div class='letterClear' id='rowThreeLetterFour'>D</div>
-                <div class='letterClear' id='rowThreeLetterFive'>S</div>
+                <div class='letterClear' id='rowThreeLetterOne'></div>
+                <div class='letterClear' id='rowThreeLetterTwo'></div>
+                <div class='letterClear' id='rowThreeLetterThree'></div>
+                <div class='letterClear' id='rowThreeLetterFour'></div>
+                <div class='letterClear' id='rowThreeLetterFive'></div>
             </section>
             <section id='userInput'>
-                <div class='letterClear' id='rowFourLetterOne'>W</div>
-                <div class='letterClear' id='rowFourLetterTwo'>O</div>
-                <div class='letterClear' id='rowFourLetterThree'>R</div>
-                <div class='letterClear' id='rowFourLetterFour'>D</div>
-                <div class='letterClear' id='rowFourLetterFive'>S</div>
+                <div class='letterClear' id='rowFourLetterOne'></div>
+                <div class='letterClear' id='rowFourLetterTwo'></div>
+                <div class='letterClear' id='rowFourLetterThree'></div>
+                <div class='letterClear' id='rowFourLetterFour'></div>
+                <div class='letterClear' id='rowFourLetterFive'></div>
             </section>
             <section id='userInput'>
-                <div class='letterClear' id='rowFiveLetterOne'>W</div>
-                <div class='letterClear' id='rowFiveLetterTwo'>O</div>
-                <div class='letterClear' id='rowFiveLetterThree'>R</div>
-                <div class='letterClear' id='rowFiveLetterFour'>D</div>
-                <div class='letterClear' id='rowFiveLetterFive'>S</div>
+                <div class='letterClear' id='rowFiveLetterOne'></div>
+                <div class='letterClear' id='rowFiveLetterTwo'></div>
+                <div class='letterClear' id='rowFiveLetterThree'></div>
+                <div class='letterClear' id='rowFiveLetterFour'></div>
+                <div class='letterClear' id='rowFiveLetterFive'></div>
             </section>
             <section id='userInput'>
-                <div class='letterClear' id='rowSixLetterOne'>W</div>
-                <div class='letterClear' id='rowSixLetterTwo'>O</div>
-                <div class='letterClear' id='rowSixLetterThree'>R</div>
-                <div class='letterClear' id='rowSixLetterFour'>D</div>
-                <div class='letterClear' id='rowSixLetterFive'>S</div>
+                <div class='letterClear' id='rowSixLetterOne'></div>
+                <div class='letterClear' id='rowSixLetterTwo'></div>
+                <div class='letterClear' id='rowSixLetterThree'></div>
+                <div class='letterClear' id='rowSixLetterFour'></div>
+                <div class='letterClear' id='rowSixLetterFive'></div>
             </section>
             <section id='keyboard'>
                 <section id='rowOne'>
