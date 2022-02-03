@@ -56,16 +56,16 @@
             </section>
             <section id='keyboard'>
                 <section id='rowOne'>
-                    <div class='keyboardLetter'>a</div>
-                    <div class='keyboardLetter'>z</div>
-                    <div class='keyboardLetter'>e</div>
-                    <div class='keyboardLetter'>r</div>
-                    <div class='keyboardLetter'>t</div>
-                    <div class='keyboardLetter'>y</div>
-                    <div class='keyboardLetter'>u</div>
-                    <div class='keyboardLetter'>i</div>
-                    <div class='keyboardLetter'>o</div>
-                    <div class='keyboardLetter'>p</div>
+                    <div class='keyboardLetter' id='a' onclick='virtualKeybord(this)'>a</div>
+                    <div class='keyboardLetter' id='z' onclick='virtualKeybord(this)'>z</div>
+                    <div class='keyboardLetter' id='e' onclick='virtualKeybord(this)'>e</div>
+                    <div class='keyboardLetter' id='r'>r</div>
+                    <div class='keyboardLetter' id='t'>t</div>
+                    <div class='keyboardLetter' id='y'>y</div>
+                    <div class='keyboardLetter' id='a'>u</div>
+                    <div class='keyboardLetter' id='a'>i</div>
+                    <div class='keyboardLetter' id='a'>o</div>
+                    <div class='keyboardLetter' id='a'>p</div>
                 </section>
                 <section id='rowTwo'>
                     <div class='keyboardLetter'>q</div>

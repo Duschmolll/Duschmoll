@@ -9,12 +9,23 @@ const keyboardKeyPos = new Array(
 let keyPos = 1;
 let rowPos = 0;
 let answer = 'WORDS';
-
+//Loop to launch put the first letter of the word to find at each row.
 for (let k = 0; k < keyboardKeyPos.length; k++) {
     document.getElementById(keyboardKeyPos[k][0]).innerHTML = answer[0].toUpperCase(); //Putting the user letter into his box pos.
 }
-//Listening to the keyboard input
-document.addEventListener('keydown', function (event) {
+
+//Listening to the keyboard input & calling the function to check the input.
+const keyCheckConst = (event) => { keyCheck(event) };
+document.addEventListener('keydown', keyCheckConst);
+
+//Listening to the virtual keyboard input & calling the function to check the input.
+function virtualKeybord(event) {
+    event.key = event.id;
+    keyCheck(event);
+};
+
+//Function to check the user key pressed.
+function keyCheck(event) {
     console.log(event.key);
     if (event.key.match(/[a-z]/) && event.key.length === 1 && keyPos < 5) { //Checking the input is key a of the alphabet.
         document.getElementById(keyboardKeyPos[rowPos][keyPos]).innerHTML = event.key.toUpperCase(); //Putting the user letter into his box pos.
@@ -27,7 +38,7 @@ document.addEventListener('keydown', function (event) {
         keyPos = 1;
         rowPos++;
     }
-});
+}
 
 //Function to compare the User input with the answer.
 function compareAnswer() {
@@ -40,9 +51,10 @@ function compareAnswer() {
             elem.setAttribute('Class', 'letterRight');
         } else if (answer.includes(elem.innerHTML) === true) { //Checking if the userAnswer[x] is somewhere in the answer[x].
             elem.setAttribute('Class', 'letterWrongPlace');
-        }
-        if (userAnswer === answer) {
-            document.removeEventListener('keydown', function () { });
-        }
-    }
-}
+        };
+        if (userAnswer === answer) { //Removing the event to listen to the keys
+            document.removeEventListener('keydown', keyCheckConst);
+        };
+    };
+};
+
