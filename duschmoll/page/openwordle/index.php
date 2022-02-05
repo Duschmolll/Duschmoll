@@ -12,47 +12,8 @@
         <br>
 
         <section id="game">
-            <section id='userInput'>
-                <div class='letterClear' id='rowOneLetterOne'></div>
-                <div class='letterClear' id='rowOneLetterTwo'></div>
-                <div class='letterClear' id='rowOneLetterThree'></div>
-                <div class='letterClear' id='rowOneLetterFour'></div>
-                <div class='letterClear' id='rowOneLetterFive'></div>
-            </section>
-            <section id='userInput'>
-                <div class='letterClear' id='rowTwoLetterOne'></div>
-                <div class='letterClear' id='rowTwoLetterTwo'></div>
-                <div class='letterClear' id='rowTwoLetterThree'></div>
-                <div class='letterClear' id='rowTwoLetterFour'></div>
-                <div class='letterClear' id='rowTwoLetterFive'></div>
-            </section>
-            <section id='userInput'>
-                <div class='letterClear' id='rowThreeLetterOne'></div>
-                <div class='letterClear' id='rowThreeLetterTwo'></div>
-                <div class='letterClear' id='rowThreeLetterThree'></div>
-                <div class='letterClear' id='rowThreeLetterFour'></div>
-                <div class='letterClear' id='rowThreeLetterFive'></div>
-            </section>
-            <section id='userInput'>
-                <div class='letterClear' id='rowFourLetterOne'></div>
-                <div class='letterClear' id='rowFourLetterTwo'></div>
-                <div class='letterClear' id='rowFourLetterThree'></div>
-                <div class='letterClear' id='rowFourLetterFour'></div>
-                <div class='letterClear' id='rowFourLetterFive'></div>
-            </section>
-            <section id='userInput'>
-                <div class='letterClear' id='rowFiveLetterOne'></div>
-                <div class='letterClear' id='rowFiveLetterTwo'></div>
-                <div class='letterClear' id='rowFiveLetterThree'></div>
-                <div class='letterClear' id='rowFiveLetterFour'></div>
-                <div class='letterClear' id='rowFiveLetterFive'></div>
-            </section>
-            <section id='userInput'>
-                <div class='letterClear' id='rowSixLetterOne'></div>
-                <div class='letterClear' id='rowSixLetterTwo'></div>
-                <div class='letterClear' id='rowSixLetterThree'></div>
-                <div class='letterClear' id='rowSixLetterFour'></div>
-                <div class='letterClear' id='rowSixLetterFive'></div>
+            <section id='letterGrid'>
+
             </section>
             <section id='keyboard'>
                 <section id='rowOne'>
