@@ -82,6 +82,8 @@ function startGame() {
         };
     };
 
+    virtualKeyboardCreation();
+
     //Loop to launch put the first letter of the word to find at each row.
     for (let k = 0; k < 6; k++) {
         document.getElementById('row' + k + 'Letter0').innerHTML = wordToFind[0].toUpperCase(); //Putting the user letter into his box pos.
@@ -94,15 +96,78 @@ function startGame() {
 const keyCheckConst = (event) => { keyCheck(event) };
 document.addEventListener('keydown', keyCheckConst);
 
+//Creating the virtual keyboard.
+function virtualKeyboardCreation() {
+    const parentOfKeyboard = document.getElementById('keyboard');
+    const azerty = "azertyuiopqsdfghjklmwxcvbn"
+    const qwerty = "qwertyuiopasdfghjklzxcvbnm"
+    for (let x = 0; x < 3; x++) {
+        switch (x) {
+            case 0:
+                let sectionOfRow0 = document.createElement('section');
+                sectionOfRow0.id = 'row' + x;
+                parentOfKeyboard.appendChild(sectionOfRow0);
+                for (let k = 0; k < 10; k++) {
+                    let divOfKey = document.createElement('div');
+                    divOfKey.id = azerty[k];
+                    divOfKey.classList.add('keyboardLetter');
+                    divOfKey.innerHTML = azerty[k]
+                    divOfKey.setAttribute('onclick', 'virtualKeyboard(this)');
+                    sectionOfRow0.appendChild(divOfKey);
+                };
+                break;
+            case 1:
+                let sectionOfRow1 = document.createElement('section');
+                sectionOfRow1.id = 'row' + x;
+                parentOfKeyboard.appendChild(sectionOfRow1);
+                for (let k = 10; k < 20; k++) {
+                    let divOfKey = document.createElement('div');
+                    divOfKey.id = azerty[k];
+                    divOfKey.classList.add('keyboardLetter');
+                    divOfKey.innerHTML = azerty[k]
+                    divOfKey.setAttribute('onclick', 'virtualKeyboard(this)');
+                    sectionOfRow1.appendChild(divOfKey);
+                };
+                break;
+            case 2:
+                let sectionOfRow2 = document.createElement('section');
+                sectionOfRow2.id = 'row' + x;
+                parentOfKeyboard.appendChild(sectionOfRow2);
+
+                for (let k = 20; k < azerty.length; k++) {
+                    let divOfKey = document.createElement('div');
+                    divOfKey.id = azerty[k];
+                    divOfKey.classList.add('keyboardLetter');
+                    divOfKey.innerHTML = azerty[k]
+                    divOfKey.setAttribute('onclick', 'virtualKeyboard(this)');
+                    sectionOfRow2.appendChild(divOfKey);
+                };
+                let divOfKeySpecial1 = document.createElement('div');
+                divOfKeySpecial1.id = 'Backspace';
+                divOfKeySpecial1.classList.add('keyboardSpecialKey');
+                divOfKeySpecial1.innerHTML = 'Del'
+                divOfKeySpecial1.setAttribute('onclick', 'virtualKeyboard(this)');
+                sectionOfRow2.appendChild(divOfKeySpecial1);
+                let divOfKeySpecial0 = document.createElement('div');
+                divOfKeySpecial0.id = 'Enter';
+                divOfKeySpecial0.classList.add('keyboardSpecialKey');
+                divOfKeySpecial0.innerHTML = 'Enter'
+                divOfKeySpecial0.setAttribute('onclick', 'virtualKeyboard(this)');
+                sectionOfRow2.appendChild(divOfKeySpecial0);
+                break;
+        };
+    };
+};
+
 //Listening to the virtual keyboard input & calling the function to check the input.
-function virtualKeybord(event) {
+function virtualKeyboard(event) {
     event.key = event.id;
     keyCheck(event);
 };
 
 //Function to check the user key pressed.
 function keyCheck(event) {
-
+    console.log(event.key)
     //Checking the input is key a of the alphabet.
     if (event.key.match(/[a-z]/) && event.key.length === 1 && keyPos < wordToFind.length) {
         document.getElementById('row' + rowPos + 'Letter' + keyPos).innerHTML = event.key.toUpperCase(); //Putting the user letter into his box pos.
