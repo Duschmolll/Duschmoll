@@ -61,7 +61,7 @@ const pageList = new Array(
         name: 'Open Wordle',
         date: '31 Janvier, 2022',
         href: 'page/openwordle',
-        img: 'res/img/coding.jpg',
+        img: 'res/img/openwordle.png',
         alt: 'Image with code',
         desc: '',
         style: ''
