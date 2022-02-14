@@ -1,81 +1,106 @@
-#userInput{
+#game{
+    min-height: 540px;
+    width: 75%;
+    margin: 20px;
+}
+
+#post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#wordRow{
     display: flex;
     justify-content: center;
+}
+
+/* Word css */
+
+#letterGrid{
+    margin: 20px;
+}
+[class*="letter"]{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: #1E1E24;
+    border-style: solid;
+    border-width: 2px;
+    width: 60px;
+    height: 60px;
+    margin: 3px;
 }
 
 .letterClear{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    width: 70px;
-    height: 70px;
-    margin: 5px;
+    border-color: #d8dee9;
+}
+.letterPending{
+    border-color: #9da1a8;
 }
 .letterRight{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    background-color: chartreuse;
-    width: 70px;
-    height: 70px;
-    margin: 5px;
+    background-color: #38ac6a;
+    color: white;
+    border: none;
 }
 .letterWrongPlace{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
-    background-color: gold;
-    width: 70px;
-    height: 70px;
-    margin: 5px;
+    background-color: #ebb666;
+    color: white;
+    border: none;
+}
+.letterNotPresent{
+    background-color: #ced4da;
+    color: white;
+    border: none;
 }
 
-#keyboard{
-    display: flex;
-    flex-direction: column;
-}
+/* Keyboard css */
 
-#rowOne, #rowTwo, #rowThree{
-    display: flex;
-    justify-content: center;
-}
 #row0, #row1, #row2{
     display: flex;
     justify-content: center;
 }
-.keyboardLetter{
+[class*="keyboard"]{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: 1.5em;
     border-style: solid;
     border-width: 2px;
-    border-color: black;
+    border-color: #dbe4ff00;
+    height: 60px;
     width: 50px;
-    height: 50px;
     margin: 5px;
+    border-radius: 6px;
+    background-color: #dbe4ff;
+    cursor: pointer;
 }
-.keyboardSpecialKey{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: black;
+
+.keyboardLetter{
+
+}
+
+.keyboardLetterRight{
+    color: white;
+    background-color: #38ac6a;
+}
+
+.keyboardLetterWrongPlace{
+    color: white;
+    background-color: #ebb666;
+}
+
+.keyboardLetterNotPresent{
+    color: white;
+    background-color: #ced4da;
+}
+
+.keyboardSpecialKeyEnter{
     width: 100px;
-    height: 50px;
-    margin: 5px;
+    background-color: #c9ffcc;
+}
+
+.keyboardSpecialKeyBackspace{
+    width: 75px;
+    background-color: #ffc9c9;
 }
