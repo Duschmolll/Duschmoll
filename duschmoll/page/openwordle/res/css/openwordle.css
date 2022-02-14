@@ -2,6 +2,7 @@
     min-height: 540px;
     width: 75%;
     margin: 20px;
+    cursor: default;
 }
 
 #post {

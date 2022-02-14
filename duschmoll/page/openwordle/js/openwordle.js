@@ -191,7 +191,7 @@ function keyCheck(event) {
 
         keyPos--; //Getting to the previous box pos.
     } else if (event.key.match('Enter') && keyPos == wordToFind.length) { //Checking the input is Enter and that the user as entered a long enough word.
-        if (wordListRefined.includes(wordUserGuessed) === false) {
+        if (wordListRefined.includes(wordUserGuessed) === true) {
             compareAnswerTest();
         } else {
             alert('Ce mot n\'est pas présent dans le dictionnaire.')
@@ -258,8 +258,13 @@ function compareAnswerTest() {
     keyPos = 1;
     rowPos++;
     //Removing the event to listen to the keys.
-    if (wordUserGuessed === wordToFind || rowPos === 6) {
+    if (wordUserGuessed === wordToFind) {
         document.removeEventListener('keydown', keyCheckConst);
+        alert('Bravo !');
+    };
+    if (wordUserGuessed !== wordToFind && rowPos === 6) {
+        document.removeEventListener('keydown', keyCheckConst);
+        alert('Le mot à trouver été : ' + wordToFind);
     };
     wordUserGuessed = wordToFind[0];
 }
